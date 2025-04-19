@@ -1,4 +1,4 @@
-cat > input/input.h << 'EOF'
+cat > src/input.h << 'EOF'
 #ifndef INPUT_H
 #define INPUT_H
 
