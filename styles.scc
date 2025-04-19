@@ -21,6 +21,14 @@ body {
   width: 100%;
   max-width: 400px;
 }
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 1rem;
+}
 
-/* Добавьте остальные стили из предыдущего примера */
-EOF
+.color-preview {
+    width: 100px;
+    height: 100px;
+    margin: 1rem auto;
+    border: 1px solid #ccc;
+}
