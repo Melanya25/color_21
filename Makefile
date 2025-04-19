@@ -1,7 +1,7 @@
 cat > Makefile << 'EOF'
 CC = gcc
 CFLAGS = -I. -I./src
-SRC = src/main.c src/input.c mongoose.c
+SRC = ./src/main.c ./src/input.c ./mongoose.c
 TARGET = server
 
 all: $(TARGET)
