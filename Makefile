@@ -1,3 +1,4 @@
+cat > Makefile << 'EOF'
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11
 SRC = main.c mongoose/mongoose.c input/input.c
@@ -12,3 +13,4 @@ clean:
 	rm -f $(TARGET)
 
 .PHONY: all clean
+EOF
