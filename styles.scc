@@ -1,18 +1,26 @@
-/* Стили для ползунков */
-input[type="range"] {
-    width: 100%;
-    margin-bottom: 1rem;
+cat > css/styles.css << 'EOF'
+* {
+  box-sizing: border-box;
 }
 
-/* Стили для значений ползунков */
-span {
-    display: inline-block;
-    width: 3rem;
-    text-align: right;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
-/* Заголовки внутри формы */
-h3 {
-    margin: 1.5rem 0 0.5rem;
-    color: #444;
+.login-container {
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
 }
+
+/* Добавьте остальные стили из предыдущего примера */
+EOF
