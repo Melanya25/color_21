@@ -1,7 +1,6 @@
-# Замените текущее содержимое на:
 CC = gcc
-CFLAGS = -I./mongoose -I./src
-SRC = src/main.c src/input.c mongoose/mongoose.c
+CFLAGS = -I. -I./src
+SRC = src/main.c src/input.c mongoose.c
 TARGET = server
 
 all: $(TARGET)
