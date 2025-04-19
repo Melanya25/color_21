@@ -4,7 +4,8 @@ color_21/
 ├── templates/
 │   ├── login.html
 │   ├── success.html
-│   └── error.html
+│   ├── error.html
+│   └── color.html
 ├── mongoose.c
 ├── mongoose.h
 ├── main.c
