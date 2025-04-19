@@ -1,0 +1,18 @@
+/* Стили для ползунков */
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Стили для значений ползунков */
+span {
+    display: inline-block;
+    width: 3rem;
+    text-align: right;
+}
+
+/* Заголовки внутри формы */
+h3 {
+    margin: 1.5rem 0 0.5rem;
+    color: #444;
+}
