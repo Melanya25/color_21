@@ -1,3 +1,4 @@
+cat > Makefile << 'EOF'
 CC = gcc
 CFLAGS = -I.
 SRC = main.c input.c mongoose.c
@@ -8,3 +9,4 @@ all:
 
 clean:
 	rm -f $(TARGET)
+EOF
