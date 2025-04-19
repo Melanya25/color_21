@@ -1,8 +1,8 @@
+cat > main.c << 'EOF'
 #include "mongoose/mongoose.h"
 #include "input/input.h"
 #include "constants.h"
 #include <stdlib.h>
-#include <string.h>
 #include <stdbool.h>
 
 enum {
@@ -18,9 +18,7 @@ static int process_request(struct mg_connection *c, struct mg_http_message *hm) 
     char *response = NULL;
     int error_code = ERR_FILE_NOT_FOUND;
 
-    // Обработка формы авторизации
-    if (!mg_strcmp(hm->url, mg_str("/login")) && 
-        !mg_strcasecmp(hm->method, mg_str("POST"))) {
+    if (!mg_strcmp(hm->url, mg_str("/login")) && !mg_strcasecmp(hm->method, mg_str("POST"))) {
         char username[100], password[100];
         const char *expected_user = getenv("LOGIN_USER");
         const char *expected_pass = getenv("LOGIN_PASS");
@@ -39,9 +37,7 @@ static int process_request(struct mg_connection *c, struct mg_http_message *hm) 
             }
         }
     }
-    // Обработка формы настройки цвета
-    else if (!mg_strcmp(hm->url, mg_str("/color")) && 
-             !mg_strcasecmp(hm->method, mg_str("POST"))) {
+    else if (!mg_strcmp(hm->url, mg_str("/color")) && !mg_strcasecmp(hm->method, mg_str("POST"))) {
         char text[500], bg_r[4], bg_g[4], bg_b[4], text_r[4], text_g[4], text_b[4];
         
         mg_http_get_var(&hm->body, "text", text, sizeof(text));
@@ -52,7 +48,6 @@ static int process_request(struct mg_connection *c, struct mg_http_message *hm) 
         mg_http_get_var(&hm->body, "text_g", text_g, sizeof(text_g));
         mg_http_get_var(&hm->body, "text_b", text_b, sizeof(text_b));
 
-        // Создаем динамическую HTML-страницу с результатом
         char *html_template = read_file(PATH_SUCCESS_HTML);
         if (html_template) {
             response = malloc(strlen(html_template) + 500);
@@ -100,8 +95,9 @@ int main(void) {
     struct mg_mgr mgr;
     mg_mgr_init(&mgr);
     mg_http_listen(&mgr, server_address, main_fun, NULL);
-    printf("Сервер запущен на %s\n", server_address);
+    printf("Server started on %s\n", server_address);
     for (;;) mg_mgr_poll(&mgr, 1000);
     mg_mgr_free(&mgr);
     return 0;
 }
+EOF
