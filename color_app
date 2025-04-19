@@ -1,0 +1,12 @@
+color_app/
+├── .gitignore
+├── .gitmodules
+├── mongoose/ (подмодуль)
+└── src/
+    ├── main.c
+    ├── Makefile
+    ├── css/
+    │   └── styles.css
+    └── templates/
+        ├── color_form.html
+        └── color_result.html
