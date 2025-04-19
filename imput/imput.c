@@ -1,4 +1,4 @@
-cat > input/input.c << 'EOF'
+cat > src/input.c << 'EOF'
 #include <stdio.h>
 #include <stdlib.h>
 #include "input.h"
