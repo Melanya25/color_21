@@ -1,2 +1,4 @@
 #!/bin/bash
-make && LOGIN_USER=admin LOGIN_PASS=1234 ./server
+export LOGIN_USER=admin
+export LOGIN_PASS=1234
+./server
