@@ -1,16 +1,10 @@
-cat > Makefile << 'EOF'
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c11
-SRC = main.c mongoose/mongoose.c input/input.c
+CFLAGS = -I.
+SRC = main.c input.c mongoose.c
 TARGET = server
 
-all: $(TARGET)
-
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $@ $^
+all:
+	$(CC) $(CFLAGS) $(SRC) -o $(TARGET)
 
 clean:
 	rm -f $(TARGET)
-
-.PHONY: all clean
-EOF
