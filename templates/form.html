@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Настройка цветов</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Настройка цветов</h2>
+        <form method="POST" action="/color">
+            <label for="text">Текст:</label>
+            <input type="text" id="text" name="text" required>
+            
+            <h3>Цвет фона</h3>
+            <label for="bg_r">Красный (R): <span id="bg_r_value">128</span></label>
+            <input type="range" id="bg_r" name="bg_r" min="0" max="255" value="128" oninput="bg_r_value.textContent = this.value">
+            
+            <label for="bg_g">Зеленый (G): <span id="bg_g_value">128</span></label>
+            <input type="range" id="bg_g" name="bg_g" min="0" max="255" value="128" oninput="bg_g_value.textContent = this.value">
+            
+            <label for="bg_b">Синий (B): <span id="bg_b_value">128</span></label>
+            <input type="range" id="bg_b" name="bg_b" min="0" max="255" value="128" oninput="bg_b_value.textContent = this.value">
+            
+            <h3>Цвет текста</h3>
+            <label for="text_r">Красный (R): <span id="text_r_value">0</span></label>
+            <input type="range" id="text_r" name="text_r" min="0" max="255" value="0" oninput="text_r_value.textContent = this.value">
+            
+            <label for="text_g">Зеленый (G): <span id="text_g_value">0</span></label>
+            <input type="range" id="text_g" name="text_g" min="0" max="255" value="0" oninput="text_g_value.textContent = this.value">
+            
+            <label for="text_b">Синий (B): <span id="text_b_value">0</span></label>
+            <input type="range" id="text_b" name="text_b" min="0" max="255" value="0" oninput="text_b_value.textContent = this.value">
+            
+            <input type="submit" value="Применить">
+        </form>
+    </div>
+</body>
+</html>
