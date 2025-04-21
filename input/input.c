@@ -1,4 +1,3 @@
-// input.c
 #include <stdio.h>
 #include <stdlib.h>
 #include "input.h"
@@ -8,7 +7,7 @@ char *read_file(const char *filename) {
     char *res = NULL;
     if (f) {
         fseek(f, 0, SEEK_END);
-        long size = ftell(f);
+        size_t size = ftell(f);
         rewind(f);
         res = (char *)malloc(size + 1);
         if (res) {
