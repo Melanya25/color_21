@@ -1,19 +1,19 @@
-project/
-├── css/                  # Каталог для CSS-файлов
-│   └── styles.css        # Основной файл стилей
-├── templates/          # Каталог для HTML-шаблонов
-│   ├── color_form.html   # Форма для ввода цвета
-│   ├── color_result.html # Страница с результатом обработки цвета
-│   ├── error.html        # Страница с сообщением об ошибке авторизации
-│   ├── login.html        # Форма авторизации
-│   └── success.html      # Страница с сообщением об успешной авторизации
-├── input/                # Каталог для файлов ввода/вывода
-│   ├── input.c           # Код для чтения файлов
-│   └── input.h           # Заголовочный файл для input.c
-├── mongoose/             # Каталог для библиотеки Mongoose
-│   ├── mongoose.c        # Исходный код Mongoose
-│   └── mongoose.h        # Заголовочный файл Mongoose
-├── constants.h           # Файл с константами путей и заголовков
-├── main.c                # Основной файл с логикой сервера
-├── Makefile              # Файл для автоматической сборки
-└── run.sh                # Скрипт для запуска сервера
+my-c-mongoose-project/
+├── constants/
+│   └── constants.h
+├── css/
+│   └── styles.css
+├── input/
+│   ├── input.c
+│   └── input.h
+├── mongoose/
+│   ├── mongoose.c
+│   └── mongoose.h
+├── templates/
+│   ├── error.html
+│   ├── login.html
+│   └── success.html
+├── Makefile
+├── main.c
+├── run.sh
+└── server (Этот файл будет создан после компиляции)
