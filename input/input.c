@@ -1,20 +1,39 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "input.h"
+#include <stdio.h>   // Для работы с файлами 
+#include <stdlib.h>  // Для работы с памятью (malloc)
+#include "input.h"   // Заголовочный файл с объявлением функции
 
+
+ //Функция для чтения содержимого файла в память
 char *read_file(const char *filename) {
-    FILE *f = fopen(filename, "rb");
-    char *res = NULL;
-    if (f) {
-        fseek(f, 0, SEEK_END);
-        size_t size = ftell(f);
-        rewind(f);
+    FILE *f = fopen(filename, "rb"); // Открываем файл в бинарном режиме для чтения
+    char *res = NULL; // Инициализируем указатель на результат
+    
+    if (f) { // Проверяем, что файл успешно открыт
+        // Определяем размер файла:
+        fseek(f, 0, SEEK_END); // Перемещаем указатель в конец файла
+        size_t size = ftell(f); // Получаем текущую позицию (размер файла)
+        rewind(f); // Возвращаем указатель в начало файла
+        
+        // Выделяем память под содержимое файла + 1 байт для нуль-терминатора
         res = (char *)malloc(size + 1);
-        if (res) {
-            fread(res, 1, size, f);
+        
+        if (res) { // Проверяем, что память успешно выделена
+            // Читаем содержимое файла в выделенную память
+            size_t read_size = fread(res, 1, size, f);
+            
+            // Добавляем нуль-терминатор в конец
             res[size] = '\0';
+            
+            // Проверяем, что прочитано столько байт, сколько ожидалось
+            if (read_size != size) {
+                // Если прочитано меньше - освобождаем память и возвращаем NULL
+                free(res);
+                res = NULL;
+            }
         }
-        fclose(f);
+        
+        fclose(f); // Закрываем файл
     }
-    return res;
+    
+    return res; // Возвращаем результат (или NULL при ошибке)
 }
