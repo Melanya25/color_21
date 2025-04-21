@@ -1,19 +1,16 @@
-my-c-mongoose-project/
-├── constants/
-│   └── constants.h
-├── css/
-│   └── styles.css
-├── input/
-│   ├── input.c
+├── constants
+│   └── constants.h  // Константы путей и Content-Type
+├── css
+│   └── styles.css     // Стили CSS
+├── input
+│   ├── input.c      // Функция для чтения файлов
 │   └── input.h
-├── mongoose/
-│   ├── mongoose.c
+├── main.c          // Основной файл сервера
+├── Makefile        // Файл для автоматической сборки
+├── mongoose
+│   ├── mongoose.c   // Файлы библиотеки Mongoose
 │   └── mongoose.h
-├── templates/
-│   ├── error.html
-│   ├── login.html
-│   └── success.html
-├── Makefile
-├── main.c
-├── run.sh
-└── server (Этот файл будет создан после компиляции)
+├── run.sh          // Скрипт для запуска сервера
+└── templates
+    ├── color_form.html  // Форма для выбора цвета
+    └── color_result.html // Страница с результатом
