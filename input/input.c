@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "input.h"
 
 char *read_file(const char *filename) {
