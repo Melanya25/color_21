@@ -1,16 +1,17 @@
+color_21/
 ├── constants
-│   └── constants.h  // Константы путей и Content-Type
+│   └── constants.h
 ├── css
-│   └── styles.css     // Стили CSS
+│   └── styles.css
 ├── input
-│   ├── input.c      // Функция для чтения файлов
+│   ├── input.c
 │   └── input.h
-├── main.c          // Основной файл сервера
-├── Makefile        // Файл для автоматической сборки
+├── main.c
+├── Makefile
 ├── mongoose
-│   ├── mongoose.c   // Файлы библиотеки Mongoose
-│   └── mongoose.h
-├── run.sh          // Скрипт для запуска сервера
+│   ├── mongoose.c
+│   └── mongoose.h  <-- Обязательно здесь!
+├── run.sh
 └── templates
-    ├── color_form.html  // Форма для выбора цвета
-    └── color_result.html // Страница с результатом
+    ├── color_form.html
+    └── color_result.html
