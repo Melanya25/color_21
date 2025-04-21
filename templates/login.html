@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
-</head>
-<body>html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Success</title>
-    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <title>Настройка цвета</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="message success">Login successful!</div>
-        <a href="/">Go to color input</a>
+        <h2>Настройка цвета</h2>
+        <form method="POST" action="/set_colors">
+            <label for="background_color">Цвет фона (hex):</label>
+            <input type="color" id="background_color" name="background_color" value="#ffffff"><br><br>
+
+            <label for="text_color">Цвет текста (hex):</label>
+            <input type="color" id="text_color" name="text_color" value="#000000"><br><br>
+
+            <input type="submit" value="Применить">
+        </form>
     </div>
 </body>
 </html>
