@@ -1,27 +1,59 @@
+/* Основные стили для всей страницы */
 body {
-    font-family: sans-serif;
+    font-family: sans-serif; /* Используем простой шрифт без засечек */
 }
 
+/* Стили для основного контейнера содержимого */
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+    width: 80%; /* Ширина контейнера 80% от родителя */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Выравнивание текста по центру */
 }
 
+/* Стили для элементов label (подписи к полям ввода) */
 label {
-    display: block;
-    margin-bottom: 5px;
+    display: block; /* Делаем блочными для переноса на новую строку */
+    margin-bottom: 5px; /* Отступ снизу */
 }
 
+/* Стили для ползунков (input type="range") */
 input[type="range"] {
-    width: 100%;
+    width: 100%; /* Ширина на весь доступный контейнер */
+    margin-bottom: 15px; /* Отступ снизу */
 }
 
+/* Стили для кнопки отправки формы */
 input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #4CAF50; /* Зеленый цвет фона */
+    color: white; /* Белый цвет текста */
+    border: none; /* Убираем стандартную рамку */
+    cursor: pointer; /* Меняем курсор при наведении */
+    border-radius: 4px; /* Скругляем углы */
+    font-size: 16px; /* Размер текста */
+    transition: background-color 0.3s; /* Плавное изменение цвета */
+}
+
+/* Состояние кнопки при наведении */
+input[type="submit"]:hover {
+    background-color: #45a049; /* Темно-зеленый цвет при наведении */
+}
+
+/* Дополнительные улучшения для ползунков (кросс-браузерность) */
+input[type="range"] {
+    -webkit-appearance: none; /* Убираем стандартный вид в WebKit */
+    height: 8px; /* Высота ползунка */
+    background: #ddd; /* Цвет фона трека */
+    border-radius: 4px; /* Скругление углов трека */
+}
+
+/* Стиль для "бегунка" ползунка */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 50%;
     cursor: pointer;
 }
