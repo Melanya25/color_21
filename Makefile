@@ -1,16 +1,16 @@
-cat > Makefile << 'EOF'
 CC = gcc
-CFLAGS = -I. -I./src -I./src/input
-SRC = $(wildcard src/*.c) $(wildcard src/input/*.c) mongoose.c
+CFLAGS = -Wall -g -I./mongoose
+
 TARGET = server
+SOURCES = main.c input/input.c mongoose/mongoose.c
 
-all: $(TARGET)
+OBJECTS = $(SOURCES:.c=.o)
 
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) $^ -o $@
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(TARGET)
-
-.PHONY: all clean
-EOF
+	rm -f $(TARGET) $(OBJECTS)
