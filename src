@@ -10,7 +10,7 @@ color_21/
 ├── Makefile
 ├── mongoose
 │   ├── mongoose.c
-│   └── mongoose.h  <-- Обязательно здесь!
+│   └── mongoose.h  
 ├── run.sh
 └── templates
     ├── color_form.html
