@@ -1,16 +1,19 @@
 CC = gcc
-CFLAGS = -Wall -g -I./mongoose
+CFLAGS = -Wall -Wextra -g
+#CFLAGS = -Wall -Wextra -O2  # Для production (оптимизация)
 
-TARGET = server
 SOURCES = main.c input/input.c mongoose/mongoose.c
-
+HEADERS = input/input.h constants/constants.h mongoose/mongoose.h
 OBJECTS = $(SOURCES:.c=.o)
+EXECUTABLE = server
 
-$(TARGET): $(OBJECTS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS)
+all: $(EXECUTABLE)
 
-%.o: %.c
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@
+
+%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(TARGET) $(OBJECTS)
+	rm -f $(OBJECTS) $(EXECUTABLE)
