@@ -1,19 +1,31 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -g
-#CFLAGS = -Wall -Wextra -O2  # Для production (оптимизация)
+CFLAGS = -Wall -g
 
-SOURCES = main.c input/input.c mongoose/mongoose.c
-HEADERS = input/input.h constants/constants.h mongoose/mongoose.h
+# Путь к библиотеке Mongoose (скопируйте файлы mongoose.c и mongoose.h в папку mongoose)
+MONGOOSE_DIR = mongoose
+
+# Исполняемый файл
+TARGET = server
+
+# Все .c файлы, которые нужно скомпилировать
+SOURCES = main.c input/input.c $(MONGOOSE_DIR)/mongoose.c
+
+# Объектные файлы
 OBJECTS = $(SOURCES:.c=.o)
-EXECUTABLE = server
 
-all: $(EXECUTABLE)
+# Флаги линковщика (в данном случае не нужны дополнительные библиотеки)
+LDFLAGS =
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $@
+all: $(TARGET)
 
-%.o: %.c $(HEADERS)
+$(TARGET): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS) $(LDFLAGS)
+
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS) $(EXECUTABLE)
+	rm -f $(OBJECTS) $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
