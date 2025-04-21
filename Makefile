@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -g
 
 # Путь к библиотеке Mongoose (скопируйте файлы mongoose.c и mongoose.h в папку mongoose)
-MONGOOSE_DIR = mongoose
+MONGOOSE_DIR = mongoose   #  <--  Проверьте, что путь верен
 
 # Исполняемый файл
 TARGET = server
@@ -19,13 +19,13 @@ LDFLAGS =
 all: $(TARGET)
 
 $(TARGET): $(OBJECTS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS) $(LDFLAGS)
+    $(CC) $(CFLAGS) -o $(TARGET) $(OBJECTS) $(LDFLAGS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+    $(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS) $(TARGET)
+    rm -f $(OBJECTS) $(TARGET)
 
 run: $(TARGET)
-	./$(TARGET)
+    ./$(TARGET)
